@@ -15,7 +15,7 @@ try {
   const response = await openai.createImageEdit(
     createReadStream(`../source_images/${src}`),
     createReadStream(`../source_images/${mask}`),
-    "painting of people in the moon",
+    "painting of people in front of power plants",
     1,
     "512x512"
   )
@@ -26,7 +26,7 @@ try {
   const blob = await imgResult.blob()
   const buffer = Buffer.from(await blob.arrayBuffer())
   writeFileSync(`../exported_images/${src.split('.')[0]}-edited_${Date.now()}.png`, buffer)
-  console.log(response.data.data[0].url);
+  // console.log(response.data.data[0].url);
 } catch (error) {
   if (error.response) {
     console.log(error.response.status);

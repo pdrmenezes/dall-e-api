@@ -24,7 +24,7 @@ try {
   const blob = await imgResult.blob()
   const buffer = Buffer.from(await blob.arrayBuffer())
   writeFileSync(`../exported_images/generated_${Date.now()}.png`, buffer)
-  console.log(response.data.data[0].url);
+  // console.log(response.data.data[0].url);
 } catch (error) {
   if (error.response) {
     console.log(error.response.status);

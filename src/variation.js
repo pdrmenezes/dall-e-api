@@ -9,7 +9,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration)
 
-const src = 'las meninas.png'
+const src = 'as meninas.png'
 
 try {
   const response = await openai.createImageVariation(
@@ -24,7 +24,7 @@ try {
   const blob = await imgResult.blob()
   const buffer = Buffer.from(await blob.arrayBuffer())
   writeFileSync(`../exported_images/${src.split('.')[0]}-variation_${Date.now()}.png`, buffer)
-  console.log(response.data.data[0].url);
+  // console.log(response.data.data[0].url);
 } catch (error) {
   if (error.response) {
     console.log(error.response.status);
