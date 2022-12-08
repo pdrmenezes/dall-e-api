@@ -1,4 +1,4 @@
-#Testing Dall•e's API
+# Testing Dall•e's API
 
 Playing around with the Dall•E 2 API exploring its 3 main features:
 
